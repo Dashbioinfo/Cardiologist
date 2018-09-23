@@ -1,0 +1,61 @@
+﻿@model CardiologistV2.Models.Record
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Record</legend>
+
+        @Html.HiddenFor(model => model.RecordID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Data)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Data)
+            @Html.ValidationMessageFor(model => model.Data)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Recdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Recdate)
+            @Html.ValidationMessageFor(model => model.Recdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Result)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Result)
+            @Html.ValidationMessageFor(model => model.Result)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PatientID, "patients")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PatientID", String.Empty)
+            @Html.ValidationMessageFor(model => model.PatientID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

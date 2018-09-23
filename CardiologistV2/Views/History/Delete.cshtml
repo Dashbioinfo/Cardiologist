@@ -1,0 +1,53 @@
+﻿@model CardiologistV2.Models.History
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>History</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Health)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Health)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Surgery)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surgery)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Medicine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Medicine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Family)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Family)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PatientID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PatientID)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

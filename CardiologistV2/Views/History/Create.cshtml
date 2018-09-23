@@ -1,0 +1,67 @@
+﻿@model CardiologistV2.Models.History
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>History</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Health)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Health)
+            @Html.ValidationMessageFor(model => model.Health)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Surgery)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Surgery)
+            @Html.ValidationMessageFor(model => model.Surgery)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Medicine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Medicine)
+            @Html.ValidationMessageFor(model => model.Medicine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Family)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Family)
+            @Html.ValidationMessageFor(model => model.Family)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PatientID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PatientID)
+            @Html.ValidationMessageFor(model => model.PatientID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

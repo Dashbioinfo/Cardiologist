@@ -1,0 +1,89 @@
+﻿@model CardiologistV2.View_Models.RegisterPatient
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register Patient</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <section id="patient">
+       <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.Name)
+            @Html.ValidationMessageFor(model => model.ThePatient.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.DateOfbirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.DateOfbirth)
+            @Html.ValidationMessageFor(model => model.ThePatient.DateOfbirth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.Gender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.Gender)
+            @Html.ValidationMessageFor(model => model.ThePatient.Gender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.Address)
+            @Html.ValidationMessageFor(model => model.ThePatient.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.Job)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.Job)
+            @Html.ValidationMessageFor(model => model.ThePatient.Job)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.Smoker)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.Smoker)
+            @Html.ValidationMessageFor(model => model.ThePatient.Smoker)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThePatient.Alcoholic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThePatient.Alcoholic)
+            @Html.ValidationMessageFor(model => model.ThePatient.Alcoholic)
+        </div>
+
+        
+    </section>
+        
+    <section id="login2">
+        @Html.EditorFor(model => model.RM)
+        
+    </section>
+    <p>
+            <input type="submit" value="Create" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to edit your profile", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        

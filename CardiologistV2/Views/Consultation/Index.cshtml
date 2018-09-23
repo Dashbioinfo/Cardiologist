@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CardiologistV2.Models.Consultation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@*@if (User.IsInRole("Patient"))*@
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.doctors.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patients.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+   if (User.IsInRole("Doctor"))
+   { 
+        if (item.doctors.Name==WebSecurity.CurrentUserName)
+        {<tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.doctors.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patients.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Records", "Index", "Record")
+            </td>
+        </tr>
+        }
+    }
+    if (User.IsInRole("Patient"))
+    { 
+       if (item.patients.Name == WebSecurity.CurrentUserName)
+       {<tr>
+            <td>               
+                @Html.DisplayFor(modelItem => item.doctors.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patients.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ConsultationID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ConsultationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ConsultationID })
+            </td>
+        </tr>
+        }
+    }
+   
+} 
+</table>

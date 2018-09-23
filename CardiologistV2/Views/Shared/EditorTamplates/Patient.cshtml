@@ -1,0 +1,64 @@
+﻿@model CardiologistV2.Models.Patient
+
+<h2>Patient</h2>
+<fieldset>
+        <legend>Patient</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfbirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfbirth)
+            @Html.ValidationMessageFor(model => model.DateOfbirth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Gender)
+            @Html.ValidationMessageFor(model => model.Gender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Job)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Job)
+            @Html.ValidationMessageFor(model => model.Job)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Smoker)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Smoker)
+            @Html.ValidationMessageFor(model => model.Smoker)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Alcoholic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Alcoholic)
+            @Html.ValidationMessageFor(model => model.Alcoholic)
+        </div>
+
+        
+    </fieldset>

@@ -1,0 +1,45 @@
+﻿@model CardiologistV2.Models.Consultation
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Consultation</legend>
+
+        @Html.HiddenFor(model => model.ConsultationID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DoctorID, "doctors")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DoctorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DoctorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PatientID, "patients")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PatientID", String.Empty)
+            @Html.ValidationMessageFor(model => model.PatientID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

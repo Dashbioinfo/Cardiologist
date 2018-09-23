@@ -1,0 +1,29 @@
+﻿@model CardiologistV2.Models.Features
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Features</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Value)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Value)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RecordID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RecordID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FeaturesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

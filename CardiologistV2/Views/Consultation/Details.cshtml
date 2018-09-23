@@ -1,0 +1,29 @@
+﻿@model CardiologistV2.Models.Consultation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Consultation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.doctors.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doctors.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.patients.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.patients.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ConsultationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

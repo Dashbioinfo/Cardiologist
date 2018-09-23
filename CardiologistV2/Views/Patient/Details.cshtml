@@ -1,0 +1,64 @@
+﻿@model CardiologistV2.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Patient</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateOfbirth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfbirth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Job)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Job)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Smoker)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Smoker)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Alcoholic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Alcoholic)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PatientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

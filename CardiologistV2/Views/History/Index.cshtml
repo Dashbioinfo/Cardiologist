@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CardiologistV2.Models.History>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Health)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surgery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Medicine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Family)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Health)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surgery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Medicine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Family)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HistoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HistoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HistoryID })
+        </td>
+    </tr>
+}
+
+</table>

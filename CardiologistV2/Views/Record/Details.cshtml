@@ -1,0 +1,43 @@
+﻿@model CardiologistV2.Models.Record
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Record</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Recdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Recdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Result)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Result)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.patients.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.patients.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.RecordID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
